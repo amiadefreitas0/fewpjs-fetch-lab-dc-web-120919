@@ -1,4 +1,10 @@
 function fetchBooks() {
+  // pass in url
+  return fetch('https://anapioficeandfire.com/api/books')
+  // turn that response into .json
+  .then(resp => resp.json())
+  // then give that json a task
+  .then(json => renderBooks(json));
 
 }
 
@@ -14,3 +20,8 @@ function renderBooks(json) {
 document.addEventListener('DOMContentLoaded', function() {
   fetchBooks()
 })
+
+// function getPosts(json){
+//   json => renderBooks(json)
+
+// }
